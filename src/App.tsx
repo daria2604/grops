@@ -3,6 +3,11 @@ import { Header } from '@vkontakte/vkui';
 import { Groups } from './components/Groups';
 import { useEffect, useState } from 'react';
 import Filter from './components/Filter';
+import {
+  privacyOptions,
+  avatarColorOptions,
+  hasFriendsOptions,
+} from './utils/filterOptions';
 
 export default function App() {
   const [groups, setGroups] = useState([]);
@@ -11,30 +16,9 @@ export default function App() {
   const [avatarColorFilter, setAvatarColorFilter] = useState('any');
   const [friendsFilter, setFriendsFilter] = useState('all');
 
-  const privacyOptions = [
-    { label: 'Все группы', value: 'all' },
-    { label: 'Закрытая группа', value: 'closed' },
-    { label: 'Открытая группа', value: 'open' },
-  ];
-
-  const avatarColorOptions = [
-    { label: 'Любой', value: 'any' },
-    { label: 'Красный', value: 'red' },
-    { label: 'Зеленый', value: 'green' },
-    { label: 'Белый', value: 'white' },
-    { label: 'Голубой', value: 'blue' },
-    { label: 'Фиолетовый', value: 'violet' },
-    { label: 'Оранжевый', value: 'orange' },
-  ];
-
-  const hasFriendsOptions = [
-    { label: 'Есть друзья', value: 'yes' },
-    { label: 'Нет друзей', value: 'no' },
-  ];
-
   useEffect(() => {
     setTimeout(() => {
-      fetch('http://localhost:5173/groups.json')
+      fetch('./groups.json')
         .then((res) => res.json())
         .then((data) => {
           if (data) {
