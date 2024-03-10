@@ -18,7 +18,7 @@ export default function App() {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch('./groups.json')
+      fetch('./assets/groups.json')
         .then((res) => res.json())
         .then((data) => {
           if (data) {
