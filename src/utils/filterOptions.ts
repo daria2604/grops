@@ -7,6 +7,7 @@ export const privacyOptions = [
 export const avatarColorOptions = [
   { label: 'Любой', value: 'any' },
   { label: 'Красный', value: 'red' },
+  { label: 'Желтый', value: 'yellow' },
   { label: 'Зеленый', value: 'green' },
   { label: 'Белый', value: 'white' },
   { label: 'Голубой', value: 'blue' },
