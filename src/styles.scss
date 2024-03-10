@@ -1,0 +1,35 @@
+.groups {
+  padding-left: 16px;
+  padding-left: 16px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+  }
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+
+  &__friends {
+    &-list {
+      padding: 5px;
+      margin: 0;
+    }
+    
+    &-item {
+      display: none;
+
+      &--opened {
+        display: block;
+      }
+    }
+  }
+}
